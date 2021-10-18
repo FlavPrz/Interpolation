@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+import numpy as np
+from scipy.interpolate import interp1d 
+
+x = np.linspace(0,50,num = 20, endpoint = True)
+y = (-x**2/9.0)
+
+f=interp1d(x, y, kind='cubic')
+
+xnew = np.linspace(0,50,30)
+resultat = f(xnew)
+
+import matplotlib.pyplot as plt
+
+plt.scatter(x,y)
+plt.scatter(xnew, resultat, c='c')
